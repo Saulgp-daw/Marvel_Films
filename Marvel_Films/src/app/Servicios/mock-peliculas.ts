@@ -1,0 +1,13 @@
+import { Pelicula } from "../Modelo/Pelicula";
+
+export const PELICULAS: Pelicula[] = [
+    {id: 1, titulo: "Avengers: Endgame", sinopsis: "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.", fechaEstreno: "2019", imagen: "assets/img/avengers_endgame.jpg"},
+    {id: 2, titulo: "Captain America: The First Avenger", sinopsis: "Steve Rogers, a rejected military soldier, transforms into Captain America after taking a dose of a 'Super-Soldier serum'. But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.", fechaEstreno: "2011", imagen: "assets/img/captain_america.jpg"},
+    {id: 3, titulo: "Doctor Strange", sinopsis: "While on a journey of physical and spiritual healing, a brilliant neurosurgeon is drawn into the world of the mystic arts.", fechaEstreno: "2016", imagen: "assets/img/doctor_strange.jpg"},
+    {id: 4, titulo: "Guardians of the Galaxy", sinopsis: "A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.", fechaEstreno: "2014", imagen: "assets/img/guardians_galaxy.jpg"},
+    {id: 5, titulo: "Iron Man", sinopsis: "After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.", fechaEstreno: "2008", imagen: "assets/img/iron_man.jpg"},
+    {id: 6, titulo: "Thor: Ragnarok", sinopsis: "Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarök, the destruction of his world, at the hands of the powerful and ruthless villain Hela.", fechaEstreno: "2017", imagen: "assets/img/thor_ragnarok.jpg"},
+    {id: 7, titulo: "Thor: Ragnarok", sinopsis: "Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarök, the destruction of his world, at the hands of the powerful and ruthless villain Hela.", fechaEstreno: "2017", imagen: "assets/img/thor_ragnarok.jpg"},
+    {id: 8, titulo: "Thor: Ragnarok", sinopsis: "Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarök, the destruction of his world, at the hands of the powerful and ruthless villain Hela.", fechaEstreno: "2017", imagen: "assets/img/thor_ragnarok.jpg"},
+    {id: 9, titulo: "Thor: Ragnarok", sinopsis: "Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarök, the destruction of his world, at the hands of the powerful and ruthless villain Hela.", fechaEstreno: "2017", imagen: "assets/img/thor_ragnarok.jpg"}
+]

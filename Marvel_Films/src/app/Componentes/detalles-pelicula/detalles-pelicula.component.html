@@ -1,0 +1,92 @@
+{{detallesPelicula()}}
+
+<div *ngIf="peliculaSeleccionada; else nuevaPelicula">
+    <div class="container border border-primary p-3 px-5 rounded" id="carta">
+        <div class="row justify-content-between">
+            <div class="col-4 mb-3">
+                <h2>{{peliculaSeleccionada.titulo}}</h2>
+                <h5 class="text-muted">Detalles de la pelicula</h5>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-success" (click)="goBack()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
+                        <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+                      </svg>
+                    Atrás</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="{{peliculaSeleccionada.imagen}}" alt="{{peliculaSeleccionada.titulo}}">
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col-12 mt-3 mr-3">
+                          <h3><span class="badge bg-primary">{{peliculaSeleccionada.id}}</span></h3>
+                    </div>
+                    <div class="col-12">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroup-sizing-default">Imagen: </span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="peliculaSeleccionada.imagen" placeholder="Inserte una URL">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroup-sizing-default">Titulo: </span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="peliculaSeleccionada.titulo" placeholder="Inserte un titulo">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">Sinopsis: </span>
+                            </div>
+                            <textarea class="form-control" placeholder="Inserte una sinopsis" id="floatingTextarea2" style="height: 100px"
+                            [(ngModel)]="peliculaSeleccionada.sinopsis"></textarea>
+                          </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroup-sizing-default">Fecha de Estreno: </span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="peliculaSeleccionada.fechaEstreno" placeholder="Inserte el año de estreno">
+                        </div>
+                    </div>
+                    <div class="col offset-7">
+                        <button class="btn btn-primary" (click)="modificarPelicula(peliculaSeleccionada)" routerLink="/listaPeliculas">Enviar</button>
+                        <button class="btn btn-danger" (click)="eliminarPelicula(peliculaSeleccionada.id)"routerLink="/listaPeliculas">Borrar</button>
+                        <button class="btn btn-secondary" (click)="cancelarEdicion()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #nuevaPelicula>
+    <h4>Insertar una película</h4>
+    <div class="form-group">
+        <input type="text" placeholder="Inserte una URL" class="form-control" #imagen required>
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="Inserte el nombre" class="form-control" #nombre required>
+    </div>
+    <div class="form-group">
+        <!--<input type="text" placeholder="Inserte una sinopsis" class="form-control" #sinopsis required>-->
+        <textarea cols="80" rows="4" placeholder="Inserte una sinopsis" #sinopsis required></textarea>
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="Inserte una fecha de estreno" class="form-control" #fecha required>
+    </div>
+    <button class="btn btn-primary" (click)="agregarPelicula(imagen.value, nombre.value, sinopsis.value, fecha.value)"
+        (click)="imagen.value=''; nombre.value=''; sinopsis.value=''; fecha.value='';"
+        routerLink="/listaPeliculas">Enviar</button>
+    <button class="btn btn-secondary"
+        (click)="imagen.value=''; nombre.value=''; sinopsis.value=''; fecha.value='';">Cancelar</button>
+</ng-template>

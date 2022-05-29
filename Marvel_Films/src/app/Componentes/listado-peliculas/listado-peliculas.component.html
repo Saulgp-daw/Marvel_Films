@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col text-center">
+        <h2>Películas de Marvel</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-2 m-1" *ngFor="let pelicula of peliculas" (click)="onSelect(pelicula)" routerLink="/detallePelicula/{{pelicula.id}}">
+        <img src="{{pelicula.imagen}}" class="img-fluid d-flex inline-block" alt="{{pelicula.titulo}}">
+        <span>{{pelicula.titulo | uppercase}}</span><br>
+        <span class="text-muted">{{pelicula.fechaEstreno}}</span>
+    </div>
+</div>
